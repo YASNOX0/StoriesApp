@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.StoriesApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/app_light_primary</item> -->
+    </style>
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/app_bg_color</item>
+        <item name="colorAccent">@color/app_primary_button</item>
+    </style>
+
+    <style name="Theme.StoriesApp" parent="Theme.MaterialComponents.Light.NoActionBar" />
+</resources>

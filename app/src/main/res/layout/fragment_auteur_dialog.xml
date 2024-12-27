@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingStart="15dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="17dp"
+    tools:context=".ui.fragment.AuteurDialogFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/iv_auteur"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/kindpng" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_nomAuteur"
+                android:layout_width="215dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:hint="@string/nom"
+                android:inputType="text"
+                android:minWidth="209dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                tools:ignore="InefficientWeight" />
+
+            <TextView
+                android:id="@+id/tv_dateNaissance"
+                android:layout_width="215dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:gravity="center|start"
+                android:minWidth="209dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/mm_dd_yyyy"
+                android:textColor="#5D5757"
+                android:textIsSelectable="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/calendar_icon" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_annulerAuteur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="@string/annuler"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_ajouterAuteur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:gravity="center"
+            android:text="@string/ajouter"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

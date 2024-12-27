@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/it_histoires"
+        android:title="@string/histoires"
+        android:icon="@drawable/histoires_icon"/>
+    <item android:id="@+id/it_auteurs"
+        android:title="@string/auteurs"
+        android:icon="@drawable/auteurs_icon"/>
+    <item android:id="@+id/it_categories"
+        android:title="@string/categories"
+        android:icon="@drawable/categories_icon"/>
+    <item android:id="@+id/it_pays"
+        android:title="@string/pays"
+        android:icon="@drawable/pays_icon"/>
+</menu>

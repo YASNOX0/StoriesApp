@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.StoriesApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <style name="datepicker" parent="Theme.Material3.Light.Dialog">
+        <item name="colorAccent">@color/app_bg_color</item>
+        <item name="colorControlActivated">@color/app_primary_button</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/app_bg_color</item>
+
+        <item name="android:buttonBarButtonStyle">@color/app_primary_button</item>
+    </style>
+</resources>

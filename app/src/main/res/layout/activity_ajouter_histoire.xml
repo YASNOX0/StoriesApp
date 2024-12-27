@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@color/app_bg_color"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingStart="13dp"
+    android:paddingEnd="13dp"
+    tools:context=".ui.activity.AjouterHistoireActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/ajouter_histoire"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center|top"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="11dp"
+        app:cardUseCompatPadding="true"
+        android:layout_gravity="center|bottom">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="35dp"
+                android:paddingEnd="25dp"
+                android:paddingStart="25dp"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:id="@+id/tv_imagePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/image_picker_bg"
+                    android:gravity="center|start"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/t_l_charger_image"
+                    android:textColor="#5D5757"
+                    android:textIsSelectable="false"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_titre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:ems="10"
+                    android:hint="@string/titre"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_auteurs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/spinner_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_ajouterAuteur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/ajouter_l_auteur"
+                    android:textColor="@color/app_primary_button"
+                    android:textIsSelectable="false"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/add_icon"
+                    app:drawableTint="@color/app_primary_button" />
+
+                <Spinner
+                    android:id="@+id/spinner_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/spinner_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_ajouterCategorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/ajouter_la_cat_gorie"
+                    android:textColor="@color/app_primary_button"
+                    android:textIsSelectable="false"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/add_icon"
+                    app:drawableTint="@color/app_primary_button" />
+
+                <Spinner
+                    android:id="@+id/spinner_pays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/spinner_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_ajouterPays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/ajouter_le_pays"
+                    android:textColor="@color/app_primary_button"
+                    android:textIsSelectable="false"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/add_icon"
+                    app:drawableTint="@color/app_primary_button" />
+
+                <TextView
+                    android:id="@+id/tv_dateCreation"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:text="@string/mm_dd_yyyy"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="#5D5757"
+                    android:textIsSelectable="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/calendar_icon" />
+
+                <EditText
+                    android:id="@+id/et_contenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:gravity="top|start"
+                    android:hint="@string/le_contenu_de_l_histoire"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/btn_ajouterHistoir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:gravity="center"
+                    android:text="@string/ajouter"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
