@@ -18,7 +18,7 @@ public interface PaysDao {
     LiveData<List<Pays>> getAll();
 
     @Query("SELECT * FROM Pays WHERE nom IN (:nomsPays)")
-    LiveData<List<Pays>> loadAllByNames(int... nomsPays);
+    LiveData<List<Pays>> loadAllByNames(String... nomsPays);
 
     @Insert
     void insertAll(Pays... pays);

@@ -26,10 +26,10 @@ import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AuteurDialogFragment#newInstance} factory method to
+ * Use the {@link AjouterAuteurDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AuteurDialogFragment extends DialogFragment {
+public class AjouterAuteurDialogFragment extends DialogFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,7 +46,7 @@ public class AuteurDialogFragment extends DialogFragment {
     private String mParam1;
     private String mParam2;
 
-    public AuteurDialogFragment() {
+    public AjouterAuteurDialogFragment() {
         // Required empty public constructor
     }
 
@@ -56,11 +56,11 @@ public class AuteurDialogFragment extends DialogFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AuteurDialogFragment.
+     * @return A new instance of fragment AjouterAuteurDialogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AuteurDialogFragment newInstance(String param1, String param2) {
-        AuteurDialogFragment fragment = new AuteurDialogFragment();
+    public static AjouterAuteurDialogFragment newInstance(String param1, String param2) {
+        AjouterAuteurDialogFragment fragment = new AjouterAuteurDialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,7 +74,7 @@ public class AuteurDialogFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         Objects.requireNonNull(Objects.requireNonNull(getDialog()).getWindow()).setBackgroundDrawableResource(R.drawable.rouded_corner_bg);
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_auteur_dialog, container, false);
+        View view = inflater.inflate(R.layout.dialog_fragment_ajouter_auteur, container, false);
         et_nomAuteur = view.findViewById(R.id.et_nomAuteur);
         tv_dateNaissance = view.findViewById(R.id.tv_dateNaissance);
         btn_ajouterAuteur = view.findViewById(R.id.btn_ajouterAuteur);
@@ -88,7 +88,7 @@ public class AuteurDialogFragment extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         btn_ajouterAuteur.setOnClickListener(v -> {
-            appViewModel.repository.insertAuteur(new Auteur(et_nomAuteur.getText().toString(),tv_dateNaissance.getText().toString()));
+            appViewModel.repository.insertAuteurs(new Auteur(et_nomAuteur.getText().toString(),tv_dateNaissance.getText().toString()));
             this.dismiss();
         });
 
@@ -101,7 +101,7 @@ public class AuteurDialogFragment extends DialogFragment {
                 @Override
                 public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-                    //Showing the picked value in the textView
+                    //Showing the picked value in the tv_info_titre
                     tv_dateNaissance.setText(String.valueOf(day) + "/" + String.valueOf(month) + "/" + String.valueOf(year));
 
                 }

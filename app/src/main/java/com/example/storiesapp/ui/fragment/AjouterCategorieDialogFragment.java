@@ -23,7 +23,6 @@ import android.widget.Toast;
 
 import com.example.storiesapp.R;
 import com.example.storiesapp.model.Categorie;
-import com.example.storiesapp.model.Pays;
 import com.example.storiesapp.viewmodel.AppViewModel;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
@@ -31,10 +30,10 @@ import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PaysDialogFragment#newInstance} factory method to
+ * Use the {@link AjouterCategorieDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PaysDialogFragment extends DialogFragment {
+public class AjouterCategorieDialogFragment extends DialogFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,12 +46,12 @@ public class PaysDialogFragment extends DialogFragment {
 
     Uri fileUri = null;
     AppViewModel appViewModel;
-    EditText et_nomPays;
-    TextView tv_imagePickerPays;
-    Button btn_ajouterPays;
-    Button btn_annulerPays;
+    EditText et_nomCategorie;
+    TextView tv_imagePickerCategorie;
+    Button btn_ajouterCategorie;
+    Button btn_annulerCategorie;
 
-    public PaysDialogFragment() {
+    public AjouterCategorieDialogFragment() {
         // Required empty public constructor
     }
 
@@ -62,11 +61,11 @@ public class PaysDialogFragment extends DialogFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PaysDialogFragment.
+     * @return A new instance of fragment AjouterCategorieDialogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PaysDialogFragment newInstance(String param1, String param2) {
-        PaysDialogFragment fragment = new PaysDialogFragment();
+    public static AjouterCategorieDialogFragment newInstance(String param1, String param2) {
+        AjouterCategorieDialogFragment fragment = new AjouterCategorieDialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -88,11 +87,11 @@ public class PaysDialogFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         Objects.requireNonNull(Objects.requireNonNull(getDialog()).getWindow()).setBackgroundDrawableResource(R.drawable.rouded_corner_bg);
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_pays_dialog, container, false);
-        et_nomPays = view.findViewById(R.id.et_nomPays);
-        tv_imagePickerPays = view.findViewById(R.id.tv_imagePicker_pays);
-        btn_ajouterPays = view.findViewById(R.id.btn_ajouterPays);
-        btn_annulerPays = view.findViewById(R.id.btn_annulerPays);
+        View view = inflater.inflate(R.layout.dialog_fragment_ajouter_categorie, container, false);
+        et_nomCategorie = view.findViewById(R.id.et_nomCategorie);
+        tv_imagePickerCategorie = view.findViewById(R.id.tv_imagePicker_categorie);
+        btn_ajouterCategorie = view.findViewById(R.id.btn_ajouterCategorie);
+        btn_annulerCategorie = view.findViewById(R.id.btn_annulerCategorie);
         appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
         return view;
     }
@@ -101,22 +100,21 @@ public class PaysDialogFragment extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_ajouterPays.setOnClickListener(v -> {
-            this.dismiss();
+        btn_ajouterCategorie.setOnClickListener(v -> {
             if (fileUri != null) {
                 Toast.makeText(getContext(), "Jaaaaaaaaaa: " + fileUri.toString(), Toast.LENGTH_SHORT).show();
-                appViewModel.repository.insertPays(new Pays(et_nomPays.getText().toString(), fileUri.toString()));
+                appViewModel.repository.insertCategories(new Categorie(et_nomCategorie.getText().toString(), fileUri.toString()));
                 this.dismiss();
             }else{
                 Toast.makeText(getContext(), "Veuillez sélectionner une image", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btn_annulerPays.setOnClickListener(v -> {
+        btn_annulerCategorie.setOnClickListener(v -> {
             this.dismiss();
         });
 
-        tv_imagePickerPays.setOnClickListener(v -> {
+        tv_imagePickerCategorie.setOnClickListener(v -> {
             ImagePicker.with(this)
                     .crop()                 // Crop image (Optional), Check Customization for more options
                     .compress(1024)         // Final image size will be less than 1 MB (Optional)
@@ -126,7 +124,10 @@ public class PaysDialogFragment extends DialogFragment {
                         return null;
                     });
         });
+
+
     }
+
 
     private ActivityResultLauncher<Intent> startForProfileImageResult =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -142,4 +143,5 @@ public class PaysDialogFragment extends DialogFragment {
                     Toast.makeText(getContext(), "Task Cancelled", Toast.LENGTH_SHORT).show();
                 }
             });
+
 }

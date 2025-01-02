@@ -1,9 +1,6 @@
 package com.example.storiesapp.ui.fragment;
 
-import static android.app.Activity.RESULT_OK;
-
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.storiesapp.R;
-import com.example.storiesapp.model.Categorie;
+import com.example.storiesapp.model.Pays;
 import com.example.storiesapp.viewmodel.AppViewModel;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
@@ -33,10 +30,10 @@ import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CategorieDialogFragment#newInstance} factory method to
+ * Use the {@link AjouterPaysDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CategorieDialogFragment extends DialogFragment {
+public class AjouterPaysDialogFragment extends DialogFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,12 +46,12 @@ public class CategorieDialogFragment extends DialogFragment {
 
     Uri fileUri = null;
     AppViewModel appViewModel;
-    EditText et_nomCategorie;
-    TextView tv_imagePickerCategorie;
-    Button btn_ajouterCategorie;
-    Button btn_annulerCategorie;
+    EditText et_nomPays;
+    TextView tv_imagePickerPays;
+    Button btn_ajouterPays;
+    Button btn_annulerPays;
 
-    public CategorieDialogFragment() {
+    public AjouterPaysDialogFragment() {
         // Required empty public constructor
     }
 
@@ -64,11 +61,11 @@ public class CategorieDialogFragment extends DialogFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CategorieDialogFragment.
+     * @return A new instance of fragment AjouterPaysDialogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CategorieDialogFragment newInstance(String param1, String param2) {
-        CategorieDialogFragment fragment = new CategorieDialogFragment();
+    public static AjouterPaysDialogFragment newInstance(String param1, String param2) {
+        AjouterPaysDialogFragment fragment = new AjouterPaysDialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -90,11 +87,11 @@ public class CategorieDialogFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         Objects.requireNonNull(Objects.requireNonNull(getDialog()).getWindow()).setBackgroundDrawableResource(R.drawable.rouded_corner_bg);
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_categorie_dialog, container, false);
-        et_nomCategorie = view.findViewById(R.id.et_nomCategorie);
-        tv_imagePickerCategorie = view.findViewById(R.id.tv_imagePicker_categorie);
-        btn_ajouterCategorie = view.findViewById(R.id.btn_ajouterCategorie);
-        btn_annulerCategorie = view.findViewById(R.id.btn_annulerCategorie);
+        View view = inflater.inflate(R.layout.dialog_fragment_ajouter_pays, container, false);
+        et_nomPays = view.findViewById(R.id.et_nomPays);
+        tv_imagePickerPays = view.findViewById(R.id.tv_imagePicker_pays);
+        btn_ajouterPays = view.findViewById(R.id.btn_ajouterPays);
+        btn_annulerPays = view.findViewById(R.id.btn_annulerPays);
         appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
         return view;
     }
@@ -103,21 +100,22 @@ public class CategorieDialogFragment extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_ajouterCategorie.setOnClickListener(v -> {
+        btn_ajouterPays.setOnClickListener(v -> {
+            this.dismiss();
             if (fileUri != null) {
                 Toast.makeText(getContext(), "Jaaaaaaaaaa: " + fileUri.toString(), Toast.LENGTH_SHORT).show();
-                appViewModel.repository.insertCategorie(new Categorie(et_nomCategorie.getText().toString(), fileUri.toString()));
+                appViewModel.repository.insertPays(new Pays(et_nomPays.getText().toString(), fileUri.toString()));
                 this.dismiss();
             }else{
                 Toast.makeText(getContext(), "Veuillez sélectionner une image", Toast.LENGTH_SHORT).show();
             }
         });
 
-        btn_annulerCategorie.setOnClickListener(v -> {
+        btn_annulerPays.setOnClickListener(v -> {
             this.dismiss();
         });
 
-        tv_imagePickerCategorie.setOnClickListener(v -> {
+        tv_imagePickerPays.setOnClickListener(v -> {
             ImagePicker.with(this)
                     .crop()                 // Crop image (Optional), Check Customization for more options
                     .compress(1024)         // Final image size will be less than 1 MB (Optional)
@@ -127,10 +125,7 @@ public class CategorieDialogFragment extends DialogFragment {
                         return null;
                     });
         });
-
-
     }
-
 
     private ActivityResultLauncher<Intent> startForProfileImageResult =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -146,5 +141,4 @@ public class CategorieDialogFragment extends DialogFragment {
                     Toast.makeText(getContext(), "Task Cancelled", Toast.LENGTH_SHORT).show();
                 }
             });
-
 }

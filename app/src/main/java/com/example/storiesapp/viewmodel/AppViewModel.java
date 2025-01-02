@@ -7,7 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.example.storiesapp.data.repository.Repository;
 
-public class AppViewModel extends AndroidViewModel {
+import java.io.Serializable;
+
+public class AppViewModel extends AndroidViewModel implements Serializable {
 
     public Repository repository;
 

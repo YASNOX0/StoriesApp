@@ -8,9 +8,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.storiesapp.R;
 import com.example.storiesapp.model.Histoire;
@@ -18,7 +21,6 @@ import com.example.storiesapp.ui.adapter.HistoireRVAdapter;
 import com.example.storiesapp.viewmodel.AppViewModel;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,8 +34,6 @@ public class HistoiresFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    RecyclerView rv_histoires;
-    AppViewModel appViewModel;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -75,15 +75,36 @@ public class HistoiresFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_histoires, container, false);
-        rv_histoires = view.findViewById(R.id.rv_histoires);
+        HistoireRVAdapter[] histoireRVAdapter = new HistoireRVAdapter[1];
+        EditText et_rechercheHistoires = view.findViewById(R.id.et_rechercheHistoires);
+        RecyclerView rv_histoires = view.findViewById(R.id.rv_histoires);
         rv_histoires.setLayoutManager(new LinearLayoutManager(getContext()));
-        appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
+        AppViewModel appViewModel = new ViewModelProvider(this).get(AppViewModel.class);
         appViewModel.repository.getAllHistoires().observe(requireActivity(), new Observer<List<Histoire>>() {
             @Override
             public void onChanged(List<Histoire> histoires) {
-                rv_histoires.setAdapter(new HistoireRVAdapter(requireActivity(), histoires, appViewModel));
+                histoireRVAdapter[0] = new HistoireRVAdapter(requireActivity(), histoires, appViewModel);
+                rv_histoires.setAdapter(histoireRVAdapter[0]);
             }
         });
+
+        et_rechercheHistoires.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                histoireRVAdapter[0].search(editable.toString());
+            }
+        });
+
         return view;
     }
 }

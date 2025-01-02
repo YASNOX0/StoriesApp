@@ -10,5 +10,13 @@
         <item name="colorAccent">@color/app_primary_button</item>
     </style>
 
+    <style name="RoundedBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheet</item>
+    </style>
+
+    <style name="RoundedBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog_bg</item>
+    </style>
+
     <style name="Theme.StoriesApp" parent="Theme.MaterialComponents.Light.NoActionBar" />
 </resources>

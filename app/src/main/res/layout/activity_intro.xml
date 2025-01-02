@@ -9,7 +9,7 @@
     tools:context=".ui.activity.IntroActivity">
 
     <Button
-        android:id="@+id/btn_intro_activity"
+        android:id="@+id/btn_introActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="27dp"

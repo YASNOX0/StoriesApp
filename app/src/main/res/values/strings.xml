@@ -22,4 +22,7 @@
     <string name="nom">Nom</string>
     <string name="annuler">Annuler</string>
     <string name="bienvenue">Bienvenue</string>
+    <string name="modifier">Modifier</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="origine">Origine :</string>
 </resources>

@@ -9,7 +9,14 @@
         <item name="colorAccent">@color/app_bg_color</item>
         <item name="colorControlActivated">@color/app_primary_button</item>
         <item name="android:selectableItemBackgroundBorderless">@color/app_bg_color</item>
-
         <item name="android:buttonBarButtonStyle">@color/app_primary_button</item>
+    </style>
+
+    <style name="RoundedBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheet</item>
+    </style>
+
+    <style name="RoundedBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog_bg</item>
     </style>
 </resources>
