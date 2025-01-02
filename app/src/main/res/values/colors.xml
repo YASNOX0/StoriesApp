@@ -6,4 +6,6 @@
     <color name="app_bg_color">#E6DAC6</color>
     <color name="app_primary_button">#65558F</color>
     <color name="dark_shadow">#803F4042</color>
+    <color name="title_color">#CBA671</color>
+    <color name="light_grey">#E4E2E2</color>"
 </resources>

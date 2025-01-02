@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Pays {
+public class Pays implements Serializable {
     @PrimaryKey
     @NonNull
     private String nom;
@@ -21,7 +23,7 @@ public class Pays {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public void setNom(String nom) {
@@ -29,7 +31,7 @@ public class Pays {
     }
 
     public String getDrapeau() {
-        return drapeau;
+        return this.drapeau;
     }
 
     public void setDrapeau(String drapeau) {

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="128dp">
+
+        <ImageView
+            android:id="@+id/iv_info_histoire"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="15dp"
+            android:scaleType="fitXY"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_titre"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/iv_info_histoire"
+            android:focusable="false"
+            android:gravity="start"
+            android:maxLines="3"
+            android:text="@string/titre"
+            android:textStyle="bold"
+            android:textColor="@color/title_color"
+            android:textIsSelectable="true"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_categorie"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_titre"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/iv_info_histoire"
+            android:focusable="false"
+            android:gravity="start|bottom"
+            android:maxLines="3"
+            android:text="@string/auteurs"
+            android:textIsSelectable="true"
+            android:textSize="7.5sp"
+            android:textStyle="bold"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tv_dateCreation"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_categorie"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/iv_info_histoire"
+            android:focusable="false"
+            android:gravity="start|bottom"
+            android:maxLines="4"
+            android:text="@string/mm_dd_yyyy"
+            android:textIsSelectable="true"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry,SmallSp" />
+
+        <ImageButton
+            android:id="@+id/ib_edite"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/ib_delete"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/update_icon"
+            app:tint="@android:color/holo_green_light" />
+
+        <ImageButton
+            android:id="@+id/ib_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/delete_forever_icon"
+            app:tint="@android:color/holo_red_dark" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

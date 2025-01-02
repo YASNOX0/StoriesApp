@@ -3,8 +3,10 @@ package com.example.storiesapp.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Auteur {
+public class Auteur implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String nom;
@@ -27,7 +29,7 @@ public class Auteur {
     }
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(long id) {
@@ -35,7 +37,7 @@ public class Auteur {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public void setNom(String nom) {
@@ -43,7 +45,7 @@ public class Auteur {
     }
 
     public String getDateNaissance() {
-        return dateNaissance;
+        return this.dateNaissance;
     }
 
     public void setDateNaissance(String dateNaissance) {

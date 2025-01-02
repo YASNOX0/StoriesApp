@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Categorie {
+public class Categorie implements Serializable {
     @PrimaryKey
     @NonNull
     private String nom;
@@ -20,7 +22,7 @@ public class Categorie {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public void setNom(String nom) {
@@ -28,7 +30,7 @@ public class Categorie {
     }
 
     public String getImage() {
-        return image;
+        return this.image;
     }
 
     public void setImage(String image) {

@@ -10,7 +10,7 @@
     android:paddingTop="20dp"
     android:paddingEnd="15dp"
     android:paddingBottom="17dp"
-    tools:context=".ui.fragment.AuteurDialogFragment">
+    tools:context=".ui.fragment.ManipulateAuteurDialogFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btn_ajouterAuteur"
+            android:id="@+id/btn_manipulateAuteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"

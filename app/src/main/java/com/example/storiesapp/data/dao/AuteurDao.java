@@ -16,8 +16,8 @@ public interface AuteurDao {
     @Query("SELECT * FROM Auteur")
     LiveData<List<Auteur>> getAll();
 
-    @Query("SELECT * FROM histoire WHERE id IN (:idsAuteurs)")
-    LiveData<List<Auteur>> loadAllByIds(int... idsAuteurs);
+    @Query("SELECT * FROM Auteur WHERE id IN (:idsAuteurs)")
+    LiveData<List<Auteur>> loadAllByIds(long... idsAuteurs);
 
     @Insert
     void insertAll(Auteur... auteur);

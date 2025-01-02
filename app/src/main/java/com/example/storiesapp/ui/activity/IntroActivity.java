@@ -2,7 +2,9 @@ package com.example.storiesapp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +14,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.storiesapp.R;
 
+import java.util.function.Predicate;
+
 public class IntroActivity extends AppCompatActivity {
 
-    Button btn_intro_activity;
+    Button btn_introActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +30,10 @@ public class IntroActivity extends AppCompatActivity {
             return insets;
         });
 
-        btn_intro_activity = findViewById(R.id.btn_intro_activity);
-        btn_intro_activity.setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity2.class));
+        btn_introActivity = findViewById(R.id.btn_introActivity);
+        btn_introActivity.setOnClickListener(v -> {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
         });
 
     }

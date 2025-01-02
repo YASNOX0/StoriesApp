@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_info_histoire"
+                android:layout_width="140dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:scaleType="fitXY"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/tv_info_titre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_info_histoire"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_info_histoire"
+                android:text="TextView"
+                android:textColor="@color/title_color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_info_categorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_titre"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_info_histoire"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_info_auteur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_categorie"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_info_histoire"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_info_dateCreation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_auteur"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_info_histoire"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_origine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_dateCreation"
+                android:layout_toEndOf="@+id/iv_info_histoire"
+                android:text="@string/origine" />
+
+            <ImageView
+                android:id="@+id/iv_info_drapeau"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/tv_info_dateCreation"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/tv_origine"
+                android:scaleType="fitXY"
+                android:scaleX="1.1"
+                android:scaleY="0.89"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/tv_info_pays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_dateCreation"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/iv_info_drapeau"
+                android:drawablePadding="20dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_info_contenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_info_histoire"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:justificationMode="inter_word"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_info_contenu"
+                android:layout_centerHorizontal="true">
+
+                <Button
+                    android:id="@+id/btn_modifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/modifier"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btn_supprimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="@string/supprimer"
+                    android:textAllCaps="false"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</FrameLayout>

@@ -10,10 +10,10 @@
     android:paddingTop="16dp"
     android:paddingStart="13dp"
     android:paddingEnd="13dp"
-    tools:context=".ui.activity.AjouterHistoireActivity">
+    tools:context=".ui.activity.HistoireManipulationActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_manipulateHistoir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -48,22 +48,44 @@
                 android:paddingStart="25dp"
                 android:paddingBottom="18dp">
 
-                <TextView
-                    android:id="@+id/tv_imagePicker"
+                <LinearLayout
+                    android:id="@+id/ll_imagePicker"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginBottom="10dp"
+                    android:weightSum="3"
                     android:background="@drawable/image_picker_bg"
-                    android:gravity="center|start"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
-                    android:text="@string/t_l_charger_image"
-                    android:textColor="#5D5757"
-                    android:textIsSelectable="false"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_imagePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/t_l_charger_image"
+                        android:textColor="#5D5757"
+                        android:textIsSelectable="false"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_pickedHistoire"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="45dp"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_launcher_background" />
+
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/et_titre"
@@ -83,6 +105,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/spinner_bg"
+                    android:popupBackground="@drawable/spinner_popup_style"
+                    android:dropDownWidth="match_parent"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
 
@@ -106,6 +130,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/spinner_bg"
+                    android:popupBackground="@drawable/spinner_popup_style"
+                    android:dropDownWidth="match_parent"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
 
@@ -129,6 +155,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/spinner_bg"
+                    android:popupBackground="@drawable/spinner_popup_style"
+                    android:dropDownWidth="match_parent"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
 
@@ -177,16 +205,33 @@
                     android:scrollbars="vertical"
                     android:textStyle="italic" />
 
-                <Button
-                    android:id="@+id/btn_ajouterHistoir"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/black"
-                    android:gravity="center"
-                    android:text="@string/ajouter"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_annuler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:text="@string/annuler"
+                        android:backgroundTint="@android:color/darker_gray"
+                        android:layout_marginEnd="20dp"/>
+
+                    <Button
+                        android:id="@+id/btn_manipulateHistoir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black"
+                        android:text="@string/ajouter"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
 
 
             </LinearLayout>

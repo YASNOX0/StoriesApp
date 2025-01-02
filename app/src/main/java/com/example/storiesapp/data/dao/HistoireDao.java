@@ -18,13 +18,16 @@ public interface HistoireDao {
     LiveData<List<Histoire>> getAll();
 
     @Query("SELECT * FROM histoire WHERE id IN (:idsHistoires)")
-    LiveData<List<Histoire>> loadAllByIds(int[] idsHistoires);
+    LiveData<List<Histoire>> loadAllByIds(int... idsHistoires);
 
     @Query("SELECT * FROM histoire WHERE nomPays LIKE :nomPays")
     LiveData<List<Histoire>> findByPays(String nomPays);
 
     @Query("SELECT * FROM histoire WHERE nomCategorie LIKE :nomCategorie")
     LiveData<List<Histoire>> findByCategories(String nomCategorie);
+
+    @Query("SELECT h.* FROM histoire AS h , auteur AS a WHERE h.idAuteur = a.id AND a.nom LIKE :nomAuteur")
+    LiveData<List<Histoire>> findByNomAuteur(String nomAuteur);
 
     @Insert
     void insertAll(Histoire... histoire);

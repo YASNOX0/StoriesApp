@@ -5,9 +5,26 @@
         <!-- <item name="colorPrimary">@color/app_light_primary</item> -->
     </style>
 
-    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+    <style name="Datepicker" parent="Theme.Material3.Light.Dialog">
+        <item name="colorAccent">@color/app_bg_color</item>
+        <item name="colorControlActivated">@color/app_primary_button</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/app_bg_color</item>
+        <item name="android:buttonBarButtonStyle">@color/app_primary_button</item>
+    </style>
+
+    <style name="RoundedBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheet</item>
+    </style>
+
+    <style name="RoundedBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog_bg</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="colorPrimary">@color/app_bg_color</item>
-        <item name="colorAccent">@color/app_primary_button</item>
+        <item name="colorAccent">#FF03DAC5</item>
+        <item name="android:textColorPrimary">@color/dark_shadow</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="Theme.StoriesApp" parent="Theme.MaterialComponents.Light.NoActionBar" />

@@ -66,4 +66,5 @@ public class CustomSpinnerAdapter<T> extends BaseAdapter {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getView(position, convertView, parent);
     }
+
 }

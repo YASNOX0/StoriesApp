@@ -17,7 +17,7 @@ public interface CategorieDao {
     LiveData<List<Categorie>> getAll();
 
     @Query("SELECT * FROM categorie WHERE nom IN (:nomsCategories)")
-    LiveData<List<Categorie>> loadAllByNames(int... nomsCategories);
+    LiveData<List<Categorie>> loadAllByNames(String... nomsCategories);
 
     @Insert
     void insertAll(Categorie... categories);

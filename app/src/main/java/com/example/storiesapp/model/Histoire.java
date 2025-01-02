@@ -1,30 +1,36 @@
 package com.example.storiesapp.model;
 
+import androidx.lifecycle.Observer;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.example.storiesapp.viewmodel.AppViewModel;
+
+import java.io.Serializable;
+import java.util.List;
+
 @Entity(foreignKeys = {
         @ForeignKey(
-                entity = Auteur.class,parentColumns = {"id"},
+                entity = Auteur.class, parentColumns = {"id"},
                 childColumns = {"idAuteur"},
                 onUpdate = ForeignKey.CASCADE,
                 onDelete = ForeignKey.CASCADE
         ),
         @ForeignKey(
-                entity = Pays.class,parentColumns = {"nom"},
+                entity = Pays.class, parentColumns = {"nom"},
                 childColumns = {"nomPays"},
                 onUpdate = ForeignKey.CASCADE,
                 onDelete = ForeignKey.CASCADE
         ),
         @ForeignKey(
-                entity = Categorie.class,parentColumns = {"nom"},
+                entity = Categorie.class, parentColumns = {"nom"},
                 childColumns = {"nomCategorie"},
                 onUpdate = ForeignKey.CASCADE,
                 onDelete = ForeignKey.CASCADE
         )
 })
-public class Histoire {
+public class Histoire implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String titre;
@@ -61,7 +67,7 @@ public class Histoire {
     }
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(long id) {
@@ -69,7 +75,7 @@ public class Histoire {
     }
 
     public String getTitre() {
-        return titre;
+        return this.titre;
     }
 
     public void setTitre(String titre) {
@@ -77,7 +83,7 @@ public class Histoire {
     }
 
     public String getImage() {
-        return image;
+        return this.image;
     }
 
     public void setImage(String image) {
@@ -85,7 +91,7 @@ public class Histoire {
     }
 
     public String getContenu() {
-        return contenu;
+        return this.contenu;
     }
 
     public void setContenu(String contenu) {
@@ -93,7 +99,7 @@ public class Histoire {
     }
 
     public String getDate() {
-        return date;
+        return this.date;
     }
 
     public void setDate(String date) {
@@ -101,7 +107,7 @@ public class Histoire {
     }
 
     public long getIdAuteur() {
-        return idAuteur;
+        return this.idAuteur;
     }
 
     public void setIdAuteur(long idAuteur) {
@@ -109,7 +115,7 @@ public class Histoire {
     }
 
     public String getNomPays() {
-        return nomPays;
+        return this.nomPays;
     }
 
     public void setNomPays(String nomPays) {
@@ -117,10 +123,11 @@ public class Histoire {
     }
 
     public String getNomCategorie() {
-        return nomCategorie;
+        return this.nomCategorie;
     }
 
     public void setNomCategorie(String nomCategorie) {
         this.nomCategorie = nomCategorie;
     }
+
 }
